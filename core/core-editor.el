@@ -225,9 +225,17 @@ extension, try to guess one."
 (def-package! expand-region
   :commands (er/expand-region er/contract-region er/mark-symbol er/mark-word))
 
-(def-package! help-fns+ ; Improved help commands
-  :commands (describe-buffer describe-command describe-file
-             describe-keymap describe-option describe-option-of-type))
+(def-package! helpful
+  :commands (helpful-callable helpful-function helpful-macro helpful-command
+             helpful-key helpful-variable helpful-at-point)
+  :init
+  (setq counsel-describe-function-function #'helpful-callable
+        counsel-describe-variable-function #'helpful-variable)
+
+  (global-set-key [remap describe-function] #'helpful-callable)
+  (global-set-key [remap describe-command]  #'helpful-command)
+  (global-set-key [remap describe-variable] #'helpful-variable)
+  (global-set-key [remap describe-key]      #'helpful-key))
 
 (def-package! pcre2el
   :commands rxt-quote-pcre)

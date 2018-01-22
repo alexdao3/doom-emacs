@@ -205,9 +205,16 @@
           :desc "Describe face"         :n  "F" #'describe-face
           :desc "Describe DOOM setting" :n  "s" #'doom/describe-setting
           :desc "Describe DOOM module"  :n  "d" #'doom/describe-module
+<<<<<<< HEAD
           :desc "Find definition"       :n  "." #'+jump/definition
           :desc "Find references"       :n  "/" #'+jump/references
           :desc "Find documentation"    :n  "h" #'+jump/documentation
+=======
+          :desc "Find definition"       :n  "." #'+lookup/definition
+          :desc "Find references"       :n  "/" #'+lookup/references
+          :desc "Find documentation"    :n  "h" #'+lookup/documentation
+          :desc "Describe at point"     :n  "." #'helpful-at-point
+>>>>>>> c5b72566... Remove help-fns+, add helpful plugin #363
           :desc "What face"             :n  "'" #'doom/what-face
           :desc "What minor modes"      :n  ";" #'doom/what-minor-mode
           :desc "Info"                  :n  "i" #'info
