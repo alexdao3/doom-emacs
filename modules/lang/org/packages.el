@@ -13,7 +13,6 @@
 (when (featurep! +babel)
   (package! ob-go)
   (package! ob-mongo)
-  (package! ob-redis)
   (package! ob-restclient)
   (package! ob-rust)
   (package! ob-sql-mode)
